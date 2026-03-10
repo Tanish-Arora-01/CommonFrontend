@@ -1,7 +1,7 @@
-const BASE = "/api";
+const BASE = `${import.meta.env.VITE_BACKEND_URL}/api`;
 
 function headers(token, json = false) {
-  const h = { "ngrok-skip-browser-warning": "true" };
+  const h = {};
   if (json) h["Content-Type"] = "application/json";
   if (token) h["Authorization"] = `Bearer ${token}`;
   return h;
